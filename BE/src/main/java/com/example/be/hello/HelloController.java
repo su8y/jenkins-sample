@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 class HelloController {
     @GetMapping("/{username}")
     public Message getHello(@PathVariable String username) {
-        return new Message("안녕하세요 " + username);
+        return new Message("안녕하십니까? " + username);
     }
 
 }
