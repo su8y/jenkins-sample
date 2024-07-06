@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/hello")
 public class HelloController {
-    @GetMapping("/{username}")
-    public Message getHello(@PathVariable String username) {
+
+    @GetMapping("/hello/{username}")
+    public Message getHello(@PathVariable(name = "username") String username) {
         return new Message("안녕하십니까? " + username);
     }
 
