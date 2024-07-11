@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.assertj.core.api.Assertions;
 
 @WebMvcTest(controllers = HelloControllerTest.class)
 @Import(HelloController.class)
@@ -26,6 +27,7 @@ class HelloControllerTest {
             .exists())
         .andExpect(MockMvcResultMatchers.jsonPath("$..message").exists())
         .andDo(print());
+    Assertions.assertThat("a").isEqualTo("b")' // always test failure
   }
 
 }
