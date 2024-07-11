@@ -38,7 +38,7 @@ pipeline {
         stage('Be Docker Depoly') {
             steps {
                 dir('BE') {
-                    sh 'docker rm -f  $(docker ps | grep ex-web-server | awk "{print $1}")'
+                    sh 'if [ $(docker ps | grep ex-web-server | awk "{print $1}") ]; then docker rm -f  $(docker ps | grep ex-web-server | awk "{print $1}"); fi'
                     sh 'docker run -d -p 8080:8080 ex-web-server'
                 }
             }
