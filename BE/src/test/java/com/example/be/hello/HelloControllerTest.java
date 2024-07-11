@@ -27,7 +27,7 @@ class HelloControllerTest {
             .exists())
         .andExpect(MockMvcResultMatchers.jsonPath("$..message").exists())
         .andDo(print());
-    Assertions.assertThat("a").isEqualTo("b")' // always test failure
+    // XXX: ERROR Assertions.assertThat("a").isEqualTo("b")' // always test failure
   }
 
 }
