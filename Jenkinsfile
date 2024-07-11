@@ -1,3 +1,7 @@
+def call(def text_pr) {
+  sh 'echo ' +text_pr
+}
+
 pipeline {
     agent any
     tools {
@@ -7,6 +11,7 @@ pipeline {
         stage('Git Clone') {
             steps {
                 git branch: 'devlop', url: 'https://github.com/su8y/jenkins-sample'
+                call("CLONE@@@@")
             }
         }
         stage('BE Lint') {
