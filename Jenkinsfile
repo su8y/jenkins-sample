@@ -19,7 +19,7 @@ pipeline {
         }
         stage('BE Build') {
             steps {
-                sh 'echo BE build'
+                sh 'echo BE builds'
                 sh 'ls'
                 dir('BE'){
                     sh 'ls -a'
